@@ -59,11 +59,24 @@ export const AppReducer = (state, action) => {
             };
         case 'SET_BUDGET':
             action.type = "DONE";
-            state.budget = action.payload;
+            let new_budget = action.payload;
+            let total_expense = 0;
+            total_expense = state.expenses.reduce(
+                (previousExp, currentExp) => {
+                    return previousExp + currentExp.cost
+                },0
+            );
+            
+            if (new_budget >= total_expense) {
+                state.budget = new_budget;
+            }
+            else {
+                alert("Cannot decrease the budget! Out of funds");
+            }
+            
 
             return {
                 ...state,
-                budget: action.payload
             };
         case 'CHG_CURRENCY':
             action.type = "DONE";

@@ -1,0 +1,23 @@
+.currency-select{
+    color: white;
+    font-weight: 300px;
+}
+  
+.currency-select option {
+    position: absolute;
+    background-color: #82E0AA;
+    color: black;
+    margin-top: 3px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+.currency-select-items div, .currency-select-selected{
+    padding: 8px 16px;
+}
+
+.currency-select:focus option:checked {
+    background-color: white;
+  }

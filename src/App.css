@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.currency-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.currency-select-items {
+  position: absolute;
+  background-color: '#82E0AA';
+  margin-top: 3px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.currency-select div:hover, .same-as-selected {
+  background-color: white;
+}
